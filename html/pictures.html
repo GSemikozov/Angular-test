@@ -1,0 +1,60 @@
+<loading-screen ng-show="loading"></loading-screen>
+
+<div ng-hide="loading">
+    <div ng-hide={{validResult}} class="col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+        <div class="row text-center">
+            <h3>No results were found for your misterious search...</h3>
+        </div>
+    </div>
+
+    <div id="pic-board" class="container" ng-show={{validResult}}>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="text-center">Search by title</h3>
+                <div class="list-group">
+                    <div class="list-group-item text-center">
+                        <form>
+                            <input type="text" class="form-control" placeholder="Search..." ng-model="search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="text-center">Search by date</h3>
+                <div class="list-group">
+                    <div class="list-group-item text-center">
+                        <form>
+                            <datepicker date-format="yyyy-MM-dd">
+                                <input class="form-control" ng-model="date" type="text">
+                            </datepicker>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu row">
+            <div class="col-sm-12 text-center" ng-repeat="pic in picsList | filter:date | filter:search ">
+                <div class="thumbnail">
+                    <a ng-click="open(pic)"><img ng-src={{pic.media.m}} title={{pic.title}}></a>
+                    <div class="caption">
+                        <h4><a class="" href={{pic.link}}>{{pic.title || Untitled | limitTo: 35}}</a></h4>
+                        <p>Published on {{pic.published | date:'d MMMM yyyy, HH:mm'}}</p>
+                        <h4>Tags</h4>
+                        <p><span ng-repeat="tag in pic.tags | limitTo:14 track by $index">{{tag}} </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MODAL WINDOW-->
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{pic.title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <img ng-src={{pic.media.m}} alt="" class="img-responsive full-width">
+                </div>
+            </div>
+        </script>
+    </div>
+</div>

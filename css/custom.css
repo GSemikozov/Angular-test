@@ -1,0 +1,13 @@
+body {
+	padding-top: 100px;
+}
+.navbar-header > a {
+	margin: 10px;
+}
+datepicker {
+	float: none;
+}
+.full-width {
+	width: 100%;
+	height: auto;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="flickrApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flickr TODO</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="bower_components/ng-tags-input/ng-tags-input.min.css" rel="stylesheet">
+    <link href="bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="css/vendor/spinner.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+
+  <body ng-controller="MainCtrl as main">
+
+    <navigation-bar></navigation-bar>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div ui-view="mainView"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-center">Copyright &copy;</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
+    <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
+    <script src="js/services/http.js"></script>
+    <script src="js/controllers/board.js"></script>
+    <script src="js/controllers/filter.js"></script>
+    <script src="js/controllers/navigation.js"></script>
+    <script src="js/directives/loading.js"></script>
+    <script src="js/directives/navigation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="search-block">
+		<h3 class="text-center">Flickr photos search</h3>
+        <div>
+			<tags-input class="list-group" ng-model="tags"></tags-input>
+		</div>
+		<a role="button" class="btn btn-primary pull-right" href="#" ui-sref="result({ tags: tagsFormatted() })">
+			find
+			<span class="badge">{{tags.length}}</span>
+		</a>
+    </div>
+</div>
